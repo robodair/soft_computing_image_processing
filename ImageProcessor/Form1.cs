@@ -159,7 +159,7 @@ namespace ImageProcessor
             return t;
         }
 
-        double computeSobel(int xx, int yy, Bitmap bmp, bool show)
+        string computeSobel(int xx, int yy, Bitmap bmp, bool show)
         {
             for (int y = 0; y < 3; y++)
             {
@@ -192,7 +192,7 @@ namespace ImageProcessor
                 textBox1.AppendText(threebythreeToString(sYtemp, "sYtemp"));
                 textBox1.AppendText("sX=" + sX.ToString() + " " + "sY=" + sY.ToString() + " sobel=" + sobel.ToString());
             }
-            return sobel;
+            return sobel.ToString();
         }
 
         public string showBitmap( Bitmap bmp)
@@ -260,7 +260,7 @@ namespace ImageProcessor
             {
                 for (int xx = 0; xx < 7; xx++)
                 {
-                    double s = computeSobel(gaps[xx], gaps[yy], bmp, false);
+                    string s = computeSobel(gaps[xx], gaps[yy], bmp, false);
                     //if (show) { textBox1.AppendText(s.ToString() + " "); }
                     retv = retv + s.ToString() + " ";
                 }
