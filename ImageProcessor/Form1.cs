@@ -14,11 +14,11 @@ namespace ImageProcessor
     public partial class Form1 : Form
     {
 
-        string dirTestFaceBmp = @"F:\B\SC2016Assignment\FaceData\testbmp\TestFaceBmp\";
-        string dirTestNotFaceBmp = @"F:\B\SC2016Assignment\FaceData\testbmp\TestNotFaceBmp\";
-        string dirTrainFaceBmp = @"F:\B\SC2016Assignment\FaceData\trainbmp\TrainFaceBmp\";
-        string dirTrainNotFaceBmp = @"F:\B\SC2016Assignment\FaceData\trainbmp\TrainNotFaceBmp\";
-        string dirTrainNotFaceBmpOld = @"F:\B\SC2016Assignment\FaceData\trainbmp\TrainNotFaceBmpOld\";
+        string dirTestFaceBmp = @"..\..\..\Images\TestFaceBmp\";
+        string dirTestNotFaceBmp = @"..\..\..\Images\TestNotFaceBmp\";
+        string dirTrainFaceBmp = @"..\..\..\Images\TrainFaceBmp\";
+        string dirTrainNotFaceBmp = @"..\..\..\Images\TrainNotFaceBmp\";
+        string dirTrainNotFaceBmpOld = @"..\..\..\Images\TrainNotFaceBmpOld\";
 
         //string prefix = "cmu_";
 
@@ -192,7 +192,8 @@ namespace ImageProcessor
                 textBox1.AppendText(threebythreeToString(sYtemp, "sYtemp"));
                 textBox1.AppendText("sX=" + sX.ToString() + " " + "sY=" + sY.ToString() + " sobel=" + sobel.ToString());
             }
-            return sobel.ToString();
+            //return sobel.ToString();
+            return sX.ToString() + " " + sY.ToString();
         }
 
         public string showBitmap( Bitmap bmp)
@@ -350,14 +351,14 @@ namespace ImageProcessor
 
         private void button7_Click(object sender, EventArgs e)
         {
-           // commented out as a safety catch 
-            // processDir(dirTrainFaceBmp, "face", "D5", 1, 2429, "trainDataFace.txt", 1, true);
+            // commented out as a safety catch 
+            processDir(dirTrainFaceBmp, "face", "D5", 1, 2429, "trainDataFace.txt", 1, true);
 
-          //  processDir(dirTrainNotFaceBmp, "cmu_", "D5", 0, 4547, "trainDataNotFace.txt", 0, true);
+            processDir(dirTrainNotFaceBmp, "cmu_", "D5", 0, 4547, "trainDataNotFace.txt", 0, true);
 
-          //  processDir(dirTestFaceBmp, "cmu_", "D4", 0, 471, "testDataFace.txt", 1, true);
+            processDir(dirTestFaceBmp, "cmu_", "D4", 0, 471, "testDataFace.txt", 1, true);
 
-          //  processDir(dirTestNotFaceBmp, "cmu_", "D4", 0, 23572, "testDataNotFace.txt", 0, true);
+            processDir(dirTestNotFaceBmp, "cmu_", "D4", 0, 23572, "testDataNotFace.txt", 0, true);
         }
     }
 }
